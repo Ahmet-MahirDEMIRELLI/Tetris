@@ -1,3 +1,7 @@
+/*
+   @brief Bu proje 2023-2024 GÃ¼z DÃ¶nemi, Bilgisayar Bilimlerine GiriÅŸ dersi iÃ§in yapÄ±lmÄ±ÅŸtÄ±r.
+   @brief This project is done for 2023-2024 Fall Semester, Introduction to Computer Seciences lecture.
+*/
 #include<stdio.h>
 #include<time.h>
 #include <stdbool.h>                        
@@ -151,7 +155,7 @@ bool makeMove(int matrix[][MAX_SIZE],int size, int score[]){
 			score[0] = 0;
 			return true;
 		}
-		j--;                                                      // kullanýcý için 1 matris için 0
+		j--;                                                      // kullanÃ½cÃ½ iÃ§in 1 matris iÃ§in 0
 		i = tryInsertion(matrix,size,piece,j);
 		clean(score);      												                       		  
 		if(i < 0){
@@ -205,8 +209,8 @@ int tryInsertion(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],int
 			}
 		}
 	}
-	if(column_of_first == 0){                   // sol üst piece[0][0] da : matrix üzerinden column, column + 1 ve column + 2 ile ilgilenicem
-		if(num_of_row == 1){					// parça 1 satýr
+	if(column_of_first == 0){                   // sol Ã¼st piece[0][0] da : matrix Ã¼zerinden column, column + 1 ve column + 2 ile ilgilenicem
+		if(num_of_row == 1){					// parÃ§a 1 satÃ½r
 			i = size - 1;
 			possible = false;
 			while(!possible && i >= 0){
@@ -230,7 +234,7 @@ int tryInsertion(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],int
 				i--;
 			}
 		}
-		else if(num_of_row == 2){				// parça 2 satýr
+		else if(num_of_row == 2){				// parÃ§a 2 satÃ½r
 			i = size - 2;
 			possible = false;
 			while(!possible && i >= 0){
@@ -262,7 +266,7 @@ int tryInsertion(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],int
 				i--;	
 			}
 		}
-		else{								   // parça 3 satýr
+		else{								   // parÃ§a 3 satÃ½r
 			i = size - 3;
 			possible = false;
 			while(!possible && i >= 0){
@@ -295,8 +299,8 @@ int tryInsertion(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],int
 			}								
 		}
 	}
-	else if(column_of_first == 1){			   // sol üst piece[0][1] de : matrix üzerinden column - 1, column ve column + 1 ile ilgilenicem
-		                                       // S parçasý;                                       
+	else if(column_of_first == 1){			   // sol Ã¼st piece[0][1] de : matrix Ã¼zerinden column - 1, column ve column + 1 ile ilgilenicem
+		                                       // S parÃ§asÃ½;                                       
 		i = size - 2;
 		possible = false;
 		while(!possible && i >= 0){
@@ -329,8 +333,8 @@ int tryInsertion(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],int
 			i--;	
 		}
 	}
-	else{							     	   // sol üst piece[0][2] de : matrix üzerinden column - 2, column -1  ve column  ile ilgilenicem
-											   // 3 kere döndürülmüþ L parçasý
+	else{							     	   // sol Ã¼st piece[0][2] de : matrix Ã¼zerinden column - 2, column -1  ve column  ile ilgilenicem
+											   // 3 kere dÃ¶ndÃ¼rÃ¼lmÃ¼Ã¾ L parÃ§asÃ½
 		i= size - 2;
 		possible = false;
 		while(!possible && i >= 0){
@@ -382,8 +386,8 @@ void updateMatrix(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],in
 			}
 		}
 	}
-	if(column_of_first == 0){                   // sol üst piece[0][0] da : matrix üzerinden column, column + 1 ve column + 2 ile ilgilenicem
-		if(num_of_row == 1){					// parça 1 satýr
+	if(column_of_first == 0){                   // sol Ã¼st piece[0][0] da : matrix Ã¼zerinden column, column + 1 ve column + 2 ile ilgilenicem
+		if(num_of_row == 1){					// parÃ§a 1 satÃ½r
 			column_of_piece = 0;
 			i = row;
 			j = column;
@@ -395,7 +399,7 @@ void updateMatrix(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],in
 				column_of_piece++;
 			}
 		}
-		else if(num_of_row == 2){				// parça 2 satýr
+		else if(num_of_row == 2){				// parÃ§a 2 satÃ½r
 				i = row;
 				row_of_piece = 0;
 				while(i <= row + 1){
@@ -412,7 +416,7 @@ void updateMatrix(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],in
 					i++;
 				}	
 		}
-		else{								   // parça 3 satýr
+		else{								   // parÃ§a 3 satÃ½r
 				i = row;
 				row_of_piece = 0;
 				while(i <= row + 2){
@@ -430,8 +434,8 @@ void updateMatrix(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],in
 				}								
 		}
 	}
-	else if(column_of_first == 1){			   // sol üst piece[0][1] de : matrix üzerinden column - 1, column ve column + 1 ile ilgilenicem
-		                                       // S parçasý
+	else if(column_of_first == 1){			   // sol Ã¼st piece[0][1] de : matrix Ã¼zerinden column - 1, column ve column + 1 ile ilgilenicem
+		                                       // S parÃ§asÃ½
 		i = row;
 		row_of_piece = 0;
 		while(i <= row + 1){
@@ -448,8 +452,8 @@ void updateMatrix(int matrix[][MAX_SIZE], int size, int piece[][PIECE_COLUMN],in
 			i++;
 		}	
 	}
-	else{							     	   // sol üst piece[0][2] de : matrix üzerinden column - 2, column -1  ve column  ile ilgilenicem
-											   // 3 kere döndürülmüþ L parçasý
+	else{							     	   // sol Ã¼st piece[0][2] de : matrix Ã¼zerinden column - 2, column -1  ve column  ile ilgilenicem
+											   // 3 kere dÃ¶ndÃ¼rÃ¼lmÃ¼Ã¾ L parÃ§asÃ½
 		i = row;
 		row_of_piece = 0;
 		while(i <= row + 1){
