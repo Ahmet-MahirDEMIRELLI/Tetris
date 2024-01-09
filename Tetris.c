@@ -12,7 +12,7 @@
 #define PIECE_ROW 3										
 #define PIECE_COLUMN 3
 void clean(int[]);
-int language;
+int language;                  // Language choise added for repository.
 int main(){
 	bool tetris(int []);
 	bool isDone;
